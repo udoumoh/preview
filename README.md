@@ -1,7 +1,7 @@
 # preview
 # The Hectre Teaser
 
-Welcome to The Hectre Teaser repository! 🏡✨
+Welcome to The Hectre preview repository! 🏡✨
 
 Explore an exclusive preview of The Hectre – your future destination for all housing needs. This repository offers a sneak peek into the innovative features and exciting developments coming your way.
 
