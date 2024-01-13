@@ -23,8 +23,6 @@ git clone https://github.com/thehectre/preview.git
 
 ```
 
-markdown
-Copy code
 # The Hectre Teaser
 
 Welcome to The Hectre Teaser repository! 🏡✨
