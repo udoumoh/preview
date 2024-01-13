@@ -1,5 +1,4 @@
-# Preview
-# The Hectre Teaser
+# The Hectre Preview
 
 Welcome to The Hectre preview repository! 🏡✨
 
