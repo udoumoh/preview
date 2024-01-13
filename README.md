@@ -1,4 +1,4 @@
-# The Hectre Preview
+# The Hectre
 
 Welcome to The Hectre preview repository! 🏡✨
 
