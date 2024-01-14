@@ -52,7 +52,7 @@ export default function Home() {
               fontWeight={"600"}
               textAlign={"center"}
             >
-              We're still a building 👷‍♂️🚧
+              We're still building 👷‍♂️🚧
             </Text>
           </Box>
           <Box>
