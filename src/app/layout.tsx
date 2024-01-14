@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
-import { fonts } from "./fonts";
+import { Metadata } from "next";
 import { Providers } from "./providers";
+import { fonts } from "./fonts";
 
 export const metadata: Metadata = {
   title: "The Hectre",
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={fonts.poppins.className}>
       <body>
-        <Providers>{children}</Providers>
+          <Providers>{children}</Providers>
       </body>
     </html>
   );
