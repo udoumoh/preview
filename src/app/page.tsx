@@ -189,8 +189,10 @@ export default function Home() {
           </Flex>
         </Flex>
       </Box>
-      <Flex justifyContent={'center'} pt={'5rem'} pb={'2rem'}>
-        <Text color={'#fff'} textAlign={'center'}>© 2024 - The Hectre</Text>
+      <Flex justifyContent={"center"} pt={"5rem"} pb={"2rem"}>
+        <Text color={"#fff"} textAlign={"center"}>
+          © 2024 - The Hectre
+        </Text>
       </Flex>
     </Box>
   );
