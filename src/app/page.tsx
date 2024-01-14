@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   const [emailInput, setEmailInput] = useState("");
   const handleInputChange = (e: any) => setEmailInput(e.target.value);
+  const currentYear = new Date().getFullYear();
 
   return (
     <Box
@@ -47,17 +48,17 @@ export default function Home() {
           </Box>
         </motion.button>
         <Grid gap={10} mt={"7rem"} mb={"3rem"}>
-            <Box>
-              <Text
-                color={"#fff"}
-                fontSize={{ base: "3xl", lg: "6xl" }}
-                fontFamily={"Poppins"}
-                fontWeight={"600"}
-                textAlign={"center"}
-              >
-                We're still building 👷‍♂️🚧
-              </Text>
-            </Box>
+          <Box>
+            <Text
+              color={"#fff"}
+              fontSize={{ base: "3xl", lg: "6xl" }}
+              fontFamily={"Poppins"}
+              fontWeight={"600"}
+              textAlign={"center"}
+            >
+              We're still building 👷‍♂️🚧
+            </Text>
+          </Box>
           <Box>
             <Text color={"#fff"} textAlign={"center"} fontSize={"xl"}>
               What are we building?
@@ -194,7 +195,7 @@ export default function Home() {
       </Box>
       <Flex justifyContent={"center"} pt={"5rem"} pb={"2rem"}>
         <Text color={"#fff"} textAlign={"center"}>
-          © 2024 - The Hectre
+          © {currentYear} - The Hectre
         </Text>
       </Flex>
     </Box>

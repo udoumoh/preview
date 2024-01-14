@@ -15,6 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={fonts.poppins.className}>
+      <head>
+        <link rel="icon" href="/images/fav.png"/>
+      </head>
       <body>
           <Providers>{children}</Providers>
       </body>
