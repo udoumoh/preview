@@ -41,7 +41,7 @@ export default function Home() {
             height={"50px"}
             display={"flex"}
             alignItems={"center"}
-            rounded={"lg"}
+            rounded={"sm"}
           >
             <Image src="/images/hlb.svg" alt="logo" h={"160px"} w={"210px"} />
           </Box>
