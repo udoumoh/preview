@@ -11,6 +11,7 @@ import {
   FormLabel,
   Input,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [emailInput, setEmailInput] = useState("");
@@ -33,28 +34,30 @@ export default function Home() {
         py={"1rem"}
         px={"1rem"}
       >
-        <Box
-          backgroundColor={"#fff"}
-          width={"auto"}
-          height={"50px"}
-          display={"flex"}
-          alignItems={"center"}
-          rounded={"lg"}
-        >
-          <Image src="/images/hlb.svg" alt="logo" h={"160px"} w={"210px"} />
-        </Box>
-        <Grid gap={10} mt={"7rem"} mb={"3rem"}>
-          <Box>
-            <Text
-              color={"#fff"}
-              fontSize={{ base: "3xl", lg: "6xl" }}
-              fontFamily={"Poppins"}
-              fontWeight={"600"}
-              textAlign={"center"}
-            >
-              We're still building 👷‍♂️🚧
-            </Text>
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <Box
+            backgroundColor={"#fff"}
+            width={"auto"}
+            height={"50px"}
+            display={"flex"}
+            alignItems={"center"}
+            rounded={"lg"}
+          >
+            <Image src="/images/hlb.svg" alt="logo" h={"160px"} w={"210px"} />
           </Box>
+        </motion.button>
+        <Grid gap={10} mt={"7rem"} mb={"3rem"}>
+            <Box>
+              <Text
+                color={"#fff"}
+                fontSize={{ base: "3xl", lg: "6xl" }}
+                fontFamily={"Poppins"}
+                fontWeight={"600"}
+                textAlign={"center"}
+              >
+                We're still building 👷‍♂️🚧
+              </Text>
+            </Box>
           <Box>
             <Text color={"#fff"} textAlign={"center"} fontSize={"xl"}>
               What are we building?
