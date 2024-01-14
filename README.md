@@ -13,7 +13,7 @@ Explore an exclusive preview of The Hectre – your future destination for all h
    Stay tuned for updates as we build up to the official release. Exciting things are on the horizon!
 
 Stay Informed:
-Visit <a>https:www.thehectre.com</a>  to learn about new developments and updates.
+Visit <a>https://preview-4amn.vercel.app/</a>  to learn about new developments and updates.
 
 Share Your Thoughts:
 We'd love to hear your feedback! Open issues for any suggestions, questions, or comments.
