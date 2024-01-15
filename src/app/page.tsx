@@ -16,7 +16,7 @@ import {
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const [emailInput, setEmailInput] = useState("johnudoumoh64@gmail.com");
+  const [emailInput, setEmailInput] = useState("");
   const handleInputChange = (e: any) => setEmailInput(e.target.value);
   const currentYear = new Date().getFullYear();
   
@@ -32,7 +32,7 @@ export default function Home() {
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+          Authorization: `Bearer re_TagQyN48_DoDBu6hSD9RgSowssh6Fs1C9`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(requestData),
@@ -44,7 +44,7 @@ export default function Home() {
       console.log("Response:", responseData);
     } catch (error: any) {
       // Handle errors
-      console.error("Error:", error.message);
+      console.error("Error:", error);
     }
   };
 
