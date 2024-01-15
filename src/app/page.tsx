@@ -25,6 +25,7 @@ export default function Home() {
       backgroundRepeat="no-repeat"
       backgroundPosition="center"
       minH={"100vh"}
+      className="lazyload"
     >
       <Box
         display={"flex"}
@@ -101,7 +102,7 @@ export default function Home() {
               <FormControl mt={"1.2rem"}>
                 <FormLabel color={"#fff"}>Enter your email address</FormLabel>
                 <Input
-                  py={"1.3rem"}
+                  py={"1.6rem"}
                   rounded={"lg"}
                   type="email"
                   value={emailInput}
@@ -117,7 +118,7 @@ export default function Home() {
                   rounded={"lg"}
                   mt={"1rem"}
                 >
-                  <Text color={"#fff"} fontSize={"lg"} fontWeight={"400"}>
+                  <Text color={"#fff"} fontSize={"md"} fontWeight={"400"}>
                     Join Waitlist
                   </Text>
                 </Button>
