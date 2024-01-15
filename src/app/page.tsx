@@ -25,7 +25,6 @@ export default function Home() {
       backgroundRepeat="no-repeat"
       backgroundPosition="center"
       minH={"100vh"}
-      className="lazyload"
     >
       <Box
         display={"flex"}
@@ -45,7 +44,13 @@ export default function Home() {
             alignItems={"center"}
             rounded={"lg"}
           >
-            <Image src="/images/hlb.svg" alt="logo" h={"160px"} w={"210px"} />
+            <Image
+              src="/images/hlb.svg"
+              alt="logo"
+              h={"160px"}
+              w={"210px"}
+              className="lazyload"
+            />
           </Box>
         </motion.button>
         <Grid gap={10} mt={"7rem"} mb={"3rem"}>
@@ -82,6 +87,7 @@ export default function Home() {
               height={{ base: "200px", lg: "387px" }}
               p={"2rem"}
               overflow={"hidden"}
+              className="lazyload"
             >
               <Text color={"#fff"} fontSize={{ base: "2xl", lg: "4xl" }}>
                 Find your next roommate on The Hectre
@@ -140,6 +146,7 @@ export default function Home() {
                 width={{ base: "full", lg: "664px" }}
                 height={{ base: "230px", lg: "318px" }}
                 p={"2rem"}
+                className="lazyload"
               >
                 <Text color={"#fff"} fontSize={{ base: "2xl", lg: "4xl" }}>
                   Let's help you get your next apartment
@@ -160,6 +167,7 @@ export default function Home() {
                 width={{ base: "full", lg: "322px" }}
                 height={{ base: "200px", md: "318px" }}
                 p={"2rem"}
+                className="lazyload"
               >
                 <Text
                   color={"#fff"}
@@ -183,11 +191,13 @@ export default function Home() {
                 height={{ base: "full", lg: "322px" }}
                 p={"2rem"}
                 justifyContent={"center"}
+                className="lazyload"
               >
                 <Image
                   src="/images/vlw.png"
                   w={{ base: "200px", md: "300px" }}
                   display={{ base: "bock", lg: "none" }}
+                  className="lazyload"
                 />
               </Flex>
             </Flex>
