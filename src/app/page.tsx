@@ -22,8 +22,7 @@ export default function Home() {
   
   const handleSubscribe = async () => {
     try {
-      const apiUrl =
-        `https://api.resend.com/audiences/${process.env.RESEND_AUDIENCE_ID}/contacts`; // Adjust the path accordingly
+      const apiUrl = `https://api.resend.com/audiences/649e4931-46a2-458e-9636-f11e2d95802a/contacts`; // Adjust the path accordingly
 
       const requestData = {
         email: emailInput,
