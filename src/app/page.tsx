@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { NextApiRequest, NextApiResponse } from "next";
+import axios from "axios";
 import {
   Text,
   Box,
@@ -14,9 +16,39 @@ import {
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const [emailInput, setEmailInput] = useState("");
+  const [emailInput, setEmailInput] = useState("johnudoumoh64@gmail.com");
   const handleInputChange = (e: any) => setEmailInput(e.target.value);
   const currentYear = new Date().getFullYear();
+  
+  const handleSubscribe = async () => {
+    try {
+      const apiUrl =
+        `https://api.resend.com/audiences/${process.env.RESEND_AUDIENCE_ID}/contacts`; // Adjust the path accordingly
+
+      const requestData = {
+        email: emailInput,
+        unsubscribed: true,
+      };
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestData),
+      });
+
+      const responseData = await response.json();
+
+      // Handle the response
+      console.log("Response:", responseData);
+    } catch (error: any) {
+      // Handle errors
+      console.error("Error:", error.message);
+    }
+  };
+
 
   return (
     <Box
@@ -119,10 +151,12 @@ export default function Home() {
                   background={"#26384A"}
                 />
                 <Button
+                  type="submit"
                   backgroundColor={"#00BFFF"}
                   h={"50px"}
                   rounded={"lg"}
                   mt={"1rem"}
+                  onClick={handleSubscribe}
                 >
                   <Text color={"#fff"} fontSize={"md"} fontWeight={"400"}>
                     Join Waitlist
