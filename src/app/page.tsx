@@ -1,7 +1,5 @@
 "use client";
 import { useState } from "react";
-import { NextApiRequest, NextApiResponse } from "next";
-import axios from "axios";
 import {
   Text,
   Box,
@@ -12,40 +10,62 @@ import {
   Button,
   FormLabel,
   Input,
+  useToast,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const toast = useToast()
   const [emailInput, setEmailInput] = useState("");
   const handleInputChange = (e: any) => setEmailInput(e.target.value);
   const currentYear = new Date().getFullYear();
   
   const handleSubscribe = async () => {
     try {
-      const apiUrl = `https://api.resend.com/audiences/649e4931-46a2-458e-9636-f11e2d95802a/contacts`; // Adjust the path accordingly
-
-      const requestData = {
-        email: emailInput,
-        unsubscribed: true,
-      };
-
-      const response = await fetch(apiUrl, {
+      const postData = { email: emailInput };
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          Authorization: `Bearer re_TagQyN48_DoDBu6hSD9RgSowssh6Fs1C9`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestData),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(postData),
       });
 
       const responseData = await response.json();
+      const contactId = responseData.contactId;
 
-      // Handle the response
-      console.log("Response:", responseData);
-    } catch (error: any) {
-      // Handle errors
-      console.error("Error:", error);
+      if (contactId) {
+        // Show success alert
+        toast({
+          title: "Success",
+          description: "You have been successfully added to our waiting list",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
+      // Handle non-OK response (e.g., show error message)
+      console.log('Error:', response.status, response.statusText);
+
+      // Show error alert
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
     }
+  } catch (error) {
+    console.error(error);
+
+    // Show loading alert while the promise is pending
+    toast({
+      title: "Promise pending",
+      description: "Please wait",
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+    });
+  }
   };
 
 
