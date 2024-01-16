@@ -42,9 +42,6 @@ export default function Home() {
           isClosable: true,
         });
       } else {
-        // Handle non-OK response (e.g., show error message)
-        console.log("Error:", response.status, response.statusText);
-
         // Show error alert
         toast({
           title: "Error",
@@ -158,6 +155,7 @@ export default function Home() {
               <FormControl mt={"1.2rem"}>
                 <FormLabel color={"#fff"}>Enter your email address</FormLabel>
                 <Input
+                  autoComplete="on"
                   py={"1.6rem"}
                   rounded={"lg"}
                   type="email"
