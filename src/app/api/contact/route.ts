@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 const apiKey = process.env.MAILCHIMP_API_KEY;
@@ -10,7 +9,7 @@ mailchimp.setConfig({
   server: apiServer,
 });
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: any, res: any) {
   let passedValue = await new Response(req.body).text();
   let {email} = JSON.parse(passedValue);
    
