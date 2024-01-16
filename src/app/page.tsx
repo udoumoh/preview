@@ -155,6 +155,7 @@ export default function Home() {
               <FormControl mt={"1.2rem"}>
                 <FormLabel color={"#fff"}>Enter your email address</FormLabel>
                 <Input
+                  autoComplete="on"
                   py={"1.6rem"}
                   rounded={"lg"}
                   type="email"
