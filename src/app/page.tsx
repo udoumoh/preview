@@ -15,11 +15,11 @@ import {
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const toast = useToast()
+  const toast = useToast();
   const [emailInput, setEmailInput] = useState("");
   const handleInputChange = (e: any) => setEmailInput(e.target.value);
   const currentYear = new Date().getFullYear();
-  
+
   const handleSubscribe = async () => {
     try {
       const postData = { email: emailInput };
@@ -42,32 +42,31 @@ export default function Home() {
           isClosable: true,
         });
       } else {
-      // Handle non-OK response (e.g., show error message)
-      console.log('Error:', response.status, response.statusText);
+        // Handle non-OK response (e.g., show error message)
+        console.log("Error:", response.status, response.statusText);
 
-      // Show error alert
+        // Show error alert
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+
+      // Show loading alert while the promise is pending
       toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        status: "error",
+        title: "Promise pending",
+        description: "Please wait",
+        status: "info",
         duration: 5000,
         isClosable: true,
       });
     }
-  } catch (error) {
-    console.error(error);
-
-    // Show loading alert while the promise is pending
-    toast({
-      title: "Promise pending",
-      description: "Please wait",
-      status: "info",
-      duration: 5000,
-      isClosable: true,
-    });
-  }
   };
-
 
   return (
     <Box
