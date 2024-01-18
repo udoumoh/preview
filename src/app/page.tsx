@@ -48,9 +48,9 @@ export default function Home() {
       } else if (isSubscribed && !contactId) {
         // Show error alert
         toast({
-          title: "Error",
+          title: "Existing Subscriber",
           description: "You have already been added to our waiting list",
-          status: "error",
+          status: "warning",
           duration: 5000,
           isClosable: true,
         });
@@ -68,9 +68,9 @@ export default function Home() {
 
       // Show loading alert while the promise is pending
       toast({
-        title: "Promise pending",
+        title: "Loading",
         description: "Please wait",
-        status: "info",
+        status: "loading",
         duration: 5000,
         isClosable: true,
       });
