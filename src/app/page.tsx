@@ -32,6 +32,10 @@ export default function Home() {
       const responseData = await response.json();
       const contactId = responseData.contactId;
 
+      const isSubscribed =
+        responseData?.response?.text &&
+        JSON.parse(responseData.response.text).title.includes("Member Exists");
+
       if (contactId) {
         // Show success alert
         toast({
@@ -41,8 +45,16 @@ export default function Home() {
           duration: 5000,
           isClosable: true,
         });
-      } else {
+      } else if (isSubscribed && !contactId) {
         // Show error alert
+        toast({
+          title: "Error",
+          description: "You have already been added to our waiting list",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
         toast({
           title: "Error",
           description: "Something went wrong. Please try again.",
