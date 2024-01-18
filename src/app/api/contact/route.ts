@@ -27,6 +27,6 @@ export async function POST(req: any, res: any) {
         contactId: response.id,
       })
   } catch (err) {
-    return NextResponse.json({ message: 'Internal server error' })
+    return NextResponse.json(err)
   }
 }
